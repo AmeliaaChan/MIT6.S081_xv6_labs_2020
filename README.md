@@ -19,3 +19,4 @@
 在`kernel/sysproc.c`中完成`sysinfo()`  
 > Attention：苯人未在`kernel/defs.h`中增加`col_freemem()`和`col_nproc()`导致编译时报错(#`O′)
 ***
+### 一个小插曲 由于本人前面做的是2021版本，发现从lab3开始与2020版本实验有差异，遂改做2020版本:)
