@@ -19,4 +19,17 @@
 在`kernel/sysproc.c`中完成`sysinfo()`  
 > Attention：苯人未在`kernel/defs.h`中增加`col_freemem()`和`col_nproc()`导致编译时报错(#`O′)
 ***
-### 一个小插曲 由于本人前面做的是2021版本，发现从lab3开始与2020版本实验有差异，遂改做2020版本:)
+## 一个小插曲 由于本人前面做的是2021版本，发现从lab3开始与2020版本实验有差异，遂改做2020版本:)
+***
+## 3. pgtbl
+> Lec4_lab: Page tables
+### 3.1 Print a page table
+内容：打印页表内容  
+
+总体难度：easy  
+
+在`kernel/vm.c`中参考`freewalk()`完成函数`vmprint()`  
+
+思路：已知页表有三级，也就是如果要完成逐级打印页表只需要写三级循环就可以(OK一如既往的糟糕的代码风格)，主要是为了避免多写一个helper函数来进行递归2333
+>Attention: 这里检索pte时的条件如果照抄`freewalk()`中的`if((pte & PTE_V) && (pte & (PTE_R|PTE_W|PTE_X)) == 0)`，则在输出第三级pte时将出错，显然后半部分应删去
+***
